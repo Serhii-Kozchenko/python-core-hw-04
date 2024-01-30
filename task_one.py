@@ -4,14 +4,12 @@ path_to_file = "files\\dev_salarys.txt"
 def total_salary(path):
     try:
         with open(path, 'r', encoding="UTF-8", errors="strict") as file:
-            salary_info = [el.strip() for el in file.readlines()]
+            salary_info = [el.strip().split(",") for el in file.readlines()]
             sum = 0
             count = 0
-            for el in salary_info:
-                _, salary = el.split(",")
+            for _, salary in salary_info:
                 sum += int(salary)
                 count += 1
-
         average = sum/count
         result = (sum, int(average))
 
