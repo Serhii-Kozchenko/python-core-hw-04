@@ -7,9 +7,9 @@ def total_salary(path):
             salary_info = [el.strip().split(",") for el in file.readlines()]
             sum = 0
             count = 0
-            for _, salary in salary_info:
-                sum += int(salary)
-                count += 1
+        for _, salary in salary_info:
+            sum += int(salary)
+            count += 1
         average = sum/count
         result = (sum, int(average))
 
